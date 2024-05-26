@@ -1,0 +1,15 @@
+<div id="<%= dom_id question %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Body:</strong>
+    <%= question.body %>
+  </p>
+
+  <%= Choice.all.count %>
+  <% question.choices.each do |choice| %>
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Choice:</strong>
+      <%= choice.body %>
+    </p>
+  <% end %>
+
+</div>

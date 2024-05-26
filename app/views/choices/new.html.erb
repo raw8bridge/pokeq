@@ -1,0 +1,19 @@
+<div class="mx-auto md:w-2/3 w-full">
+  <h1 class="font-bold text-4xl">New choices</h1>
+
+  <%= render "question", question: @question %>
+
+  <%= form_with(model: @form_choice, url: question_choices_path) do |form| %>
+    <div class="my-5">
+      <%= form.fields_for :choices do |f| %>
+        <%= f.label :body %>
+        <%= f.text_field :body, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+      <% end %>
+    </div>
+
+
+    <div class="inline">
+      <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    </div>
+  <% end %>
+</div>
